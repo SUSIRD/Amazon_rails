@@ -1,1 +1,15 @@
 Un texto sensillo
+
+<%= Post.only_published.each do |post|%>
+    <table>
+        <tr><%= post.title %></tr>
+        <tr><%= post.content %></tr>
+    </table>
+<% end %>
+
+#Posts más populares
+<%= Post.popular.each do |post|%>
+    <tr><%= post.title %></tr>
+    <tr><%= post.content %></tr>
+<% end %>
+
