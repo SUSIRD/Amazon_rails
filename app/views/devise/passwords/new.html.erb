@@ -1,16 +1,18 @@
-<h2>Forgot your password?</h2>
+<body class="text-center">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "form-signin" }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= render "layouts/alerts" %>
+    <%= image_tag("bootstrap-solid.jpg", width: '72', height: '72', class: "mb-4") %>
+    <h1 class="h3 mb-3 font-weight-normal">Forgot your password?</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: true %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <br>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+    <%= f.submit "Send me reset password", class: "btn btn-lg btn-primary btn-block" %>
 
-<%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+  <% end %>
+</body>

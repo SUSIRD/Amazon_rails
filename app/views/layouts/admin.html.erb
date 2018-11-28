@@ -2,17 +2,21 @@
 <html>
   <head>
     <title>Admin - Amazon</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <%#= csrf_meta_tags %>
+    <%#= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+     
     <%= yield %>
+    <%# Alerts %>
+    <script>
+      $(".alert").fadeIn(500).css("opacity", "0.85").delay(6000).slideUp(1000);
+      $(".alerts").on('click', '.alert', function(){ $(this).remove() });
+    </script>
   </body>
 </html>
 

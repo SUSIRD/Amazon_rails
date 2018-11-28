@@ -6,4 +6,15 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  #Set Role
+  enum role:[ :user, :admin ]
+
+  before_create :set_default_user
+
+  def set_default_user
+    self.role = :user
+  end
+
+
 end
