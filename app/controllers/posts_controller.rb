@@ -6,6 +6,13 @@ class PostsController < ApplicationController
   def index
     if params[:category].blank?
       @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], per_page: 2)
+
+      @last_post = Post.last
+      @shoes_category = Category.find_by(name: "Shoes")
+      @shoes_last_post = @shoes_category.posts.last
+
+      @woman_category = Category.find_by(name: "Woman")
+      @woman_last_post = @woman_category.posts.last
     else
       @category_id = Category.find_by(name: params[:category]).id
       @posts = Post.where(category_id: @category_id).order(created_at: :desc).paginate(page: params[:page], per_page: 2)
