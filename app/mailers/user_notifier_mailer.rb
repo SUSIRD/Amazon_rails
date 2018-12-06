@@ -12,23 +12,17 @@ class UserNotifierMailer < ApplicationMailer
         
     # end
 
-    def new_post_notifying_user(email, title, id)
+    def new_post_notifying(email, title, id, type_user)
         @email = email
         @title = title
         @id = id
-        # @url ="http://localhost:3000/posts/#{@id}"
-        @url = "https://amazon-vesp.herokuapp.com/posts/#{@id}"
-        mail(to: @email, subject: "#{@title} - User / New blog post on Amazon-Clone")
+        @type_user = type_user
+        @url ="http://localhost:3000/posts/#{@id}"
+        #@url = "https://amazon-vesp.herokuapp.com/posts/#{@id}"
+        mail(to: @email, subject: "#{@title} - #{@type_user} New blog post on Amazon-Clone")
     end
 
-    def new_post_notifying_subscriptor(subscriptor_email, title, id)
-        @subscriptor_email = subscriptor_email
-        @title = title 
-        @id = id
-        @url ="https://localhost:3000/posts/#{@id}"
-        # @url = "https://amazon-vesp.herokuapp.com/posts/#{@id}"
-        mail(to: @subscriptor_email, subject: "#{@title} - Subscriptor / New blog post on Amazon-Clone")
-    end
+   
     
 end
 
