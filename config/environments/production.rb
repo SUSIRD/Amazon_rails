@@ -93,7 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Sengrid config
-  ActionMailer::Base-smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     user_name: ENV["SENDGRID_USERNAME"],
     password: ENV["SENDGRID_PASSWORD"],
     domain: 'https://amazon-vesp.herokuapp.com/',
