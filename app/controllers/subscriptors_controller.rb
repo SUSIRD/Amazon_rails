@@ -9,6 +9,8 @@ class SubscriptorsController < ApplicationController
   def create
     @subscriptor = Subscriptor.new(subscriptor_params)
       if @subscriptor.save
+
+        UserNotifierMailer.send_subscribe_email(@subscriptor).deliver_now
         redirect_to posts_path, notice: "¡Te has suscrito exitosamente"
       else
       flash[:alert] = "La suscripción falló en crearse, vuelva a intentarlo"
