@@ -97,7 +97,7 @@ Rails.application.configure do
     user_name: ENV["SENDGRID_USERNAME"],
     password: ENV["SENDGRID_PASSWORD"],
     domain: 'https://amazon-vesp.herokuapp.com/',
-    adress: 'smtp.sengrid.net',
+    adress: 'smtp.sendgrid.net',
     port: 587, 
     authentication: :plain, 
     enable_starttls_auto: true
