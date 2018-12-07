@@ -17,8 +17,8 @@ class UserNotifierMailer < ApplicationMailer
         @title = title
         @id = id
         @type_user = type_user
-        @url ="http://localhost:3000/posts/#{@id}"
-        #@url = "https://amazon-vesp.herokuapp.com/posts/#{@id}"
+        #@url ="http://localhost:3000/posts/#{@id}"
+        @url = "https://amazon-vesp.herokuapp.com/posts/#{@id}"
         mail(to: @email, subject: "#{@title} - #{@type_user} New blog post on Amazon-Clone")
     end
 
@@ -27,7 +27,8 @@ class UserNotifierMailer < ApplicationMailer
         @title = title 
         @id = id 
         @type_user = type_user
-        @url ="http://localhost:3000/posts/#{@id}"
+        #@url ="http://localhost:3000/posts/#{@id}"
+        @url = "https://amazon-vesp.herokuapp.com/posts/#{@id}"
         mail(to: @email, subject: "#{@title} - #{@type_user}  Blog post edited on Amazon-Clone" )
         end       
     end
