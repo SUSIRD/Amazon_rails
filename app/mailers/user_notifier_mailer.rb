@@ -22,9 +22,19 @@ class UserNotifierMailer < ApplicationMailer
         mail(to: @email, subject: "#{@title} - #{@type_user} New blog post on Amazon-Clone")
     end
 
+    def edit_post_notifying(email, title, id, type_user)
+        @email = email
+        @title = title 
+        @id = id 
+        @type_user = type_user
+        @url ="http://localhost:3000/posts/#{@id}"
+        mail(to: @email, subject: "#{@title} - #{@type_user}  Blog post edited on Amazon-Clone" )
+        end       
+    end
+    
    
     
-end
+
 
 
 #Variables de entorno
