@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :subscriptors, only: [:new, :create]
   
+  # #admin routs
+  get 'admin', to: 'admin#index'
+  
 
   
 
