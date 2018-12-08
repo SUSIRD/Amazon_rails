@@ -1,0 +1,43 @@
+  
+  <div class="table-responsive">
+        <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>#Id</th>
+              <th>User</th>
+              <th>Title</th>
+              <th>Category</th> 
+              <th>Comments</th>  
+              <th>Actions</th>
+            </tr>
+        </thead>
+            <tbody>
+                <% @posts.each do |post|%>
+                    <tr>
+                        <td><%= post.id %></td>
+                        <td><%= post.user.email %></td>
+                        <td><%= post.title %></td>
+                        <td><%= post.category.name %></td>
+                        <td><%= post.comments.count %></td>
+                        <td>
+          <%#= link_to "Texto que va a aparecer", ruta_path, method, class %>
+                    <div class="btn-group" role="group">
+                       <%= link_to  post_path(post), class: "btn btn-primary" do %>
+                        <span data-feather="eye"></span> 
+                       <% end %>
+                        <%= link_to edit_post_path(post), class: "btn btn-warning" do %>
+                        <span data-feather="edit"></span>
+                        
+                       <% end %> 
+                        <%= button_to post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" do%>
+                        <span data-feather="delete"></span>
+                        <% end %>
+                    </div>
+                    </td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+      </div>
+
+      
