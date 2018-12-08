@@ -42,14 +42,14 @@
 <script>
   var ctx = document.getElementById("myChart");
   var myChart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
       labels: ["Users", "Posts", "Comments", "Subscriptors"],
       datasets: [{
         data: [<%= @users.count %>, <%= @posts.count %>, <%= @comments %>, <%= @subscriptors.count %>  ],
         lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
+        backgroundColor: '#F5DEB3',
+        borderColor: '#FFEBCD',
         borderWidth: 4,
         pointBackgroundColor: '#007bff'
       }]
