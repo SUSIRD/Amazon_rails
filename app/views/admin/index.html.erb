@@ -10,6 +10,7 @@
           <div class="btn-group mr-2">
             <button class="btn btn-sm btn-outline-secondary">Share</button>
             <button class="btn btn-sm btn-outline-secondary">Export</button>
+            
           </div>
           <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
@@ -48,8 +49,8 @@
       datasets: [{
         data: [<%= @users.count %>, <%= @posts.count %>, <%= @comments %>, <%= @subscriptors.count %>  ],
         lineTension: 0,
-        backgroundColor: '#F5DEB3',
-        borderColor: '#FFEBCD',
+        backgroundColor: '#D8BFD8',
+        borderColor: '#DDA0DD',
         borderWidth: 4,
         pointBackgroundColor: '#007bff'
       }]
@@ -67,5 +68,6 @@
       }
     }
   });
+  new ProductView();
 </script>
 
