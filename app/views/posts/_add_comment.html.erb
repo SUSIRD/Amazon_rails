@@ -6,8 +6,9 @@
     <%= f.text_area :comment, class: "form-control" %>
     <br>
     <p>
-      <%= f.submit "Save Comment", class: "btn btn-primary" %>
+      <%= f.button "Save Comment", class: "btn btn-primary", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>Publishing..."} %>
     </p>
 
   </div>
 <% end %>
+
