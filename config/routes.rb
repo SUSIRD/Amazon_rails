@@ -9,16 +9,13 @@ Rails.application.routes.draw do
     end
   end 
 
-  resources :subscriptors, only: [:new, :create]
-  
+  resources :subscriptors
   # #admin routs
   get 'admin', to: 'admin#index'
   get 'admin/products', to: 'admin#products'
 
-  resources :products, only: [:new, :create]
-  
+  resources :products
 
-  
 
   #Home rute
   # get 'home/index',      to: 'home#index'
